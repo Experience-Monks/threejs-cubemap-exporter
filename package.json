@@ -1,7 +1,7 @@
 {
   "name": "threejs-cubemap-exporter",
   "version": "1.0.0",
-  "description": "Exports png from cubemap",
+  "description": "Exports cubemap environment from THREE.CubeCamera into 6 .PNGs",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
