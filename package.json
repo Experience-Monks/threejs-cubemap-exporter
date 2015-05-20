@@ -1,0 +1,26 @@
+{
+  "name": "threejs-cubemap-exporter",
+  "version": "1.0.0",
+  "description": "Exports png from cubemap",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "David Tran <davidt@jam3.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "file-io-server": "^1.0.6",
+    "png-io": "^1.0.1",
+    "shelljs": "^0.5.0",
+    "threejs-managed-view": "^4.0.3"
+  },
+  "devDependencies": {
+    "game-keyboard": "^0.1.0",
+    "input-unified-pointers": "^2.2.1",
+    "three": "^0.71.0",
+    "threejs-camera-controller-first-person-desktop": "^5.0.1",
+    "threejs-checkerroom": "^1.0.0",
+    "threejs-texture-checkerboard": "^1.0.0"
+  }
+}
