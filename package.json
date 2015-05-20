@@ -1,6 +1,6 @@
 {
   "name": "threejs-cubemap-exporter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Exports cubemap environment from THREE.CubeCamera into 6 .PNGs",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "threejs-texture-checkerboard": "^1.0.0"
   },
   "repository": {
-    "type": "git",		
+    "type": "git",
     "url": "git://github.com/Jam3/threejs-cubemap-exporter.git"
   }
 }
