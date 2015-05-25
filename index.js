@@ -21,17 +21,9 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, finalCallba
 	var context3D = renderer.getContext();
 	var target = new THREE.WebGLRenderTarget(width, height);
 
-	cubeMapCamera.scale.x *= -1;
-	cubeMapCamera.updateMatrix();
-	cubeMapCamera.updateMatrixWorld();
-
 	function cameraToPNG(camera, name, callback)
 	{
-		context3D.frontFace(context3D.CW );
-
 		renderer.render(scene, camera, target);
-
-		context3D.frontFace(context3D.CCW );
 
 		// Create a data string
 		var data = new Uint8Array(width * height * 4);
