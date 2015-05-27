@@ -2,7 +2,7 @@ var PNGIO = require('png-io');
 
 var cameraNames = ['PX', 'NX', 'PY', 'NY', 'PZ', 'NZ'];
 
-function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, finalCallback)
+function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, unpremultiply, finalCallback)
 {
 	var width = cubeMapCamera.renderTarget.width;
 	var height = cubeMapCamera.renderTarget.height;
@@ -28,7 +28,21 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, finalCallba
 		// Create a data string
 		var data = new Uint8Array(width * height * 4);
 		context3D.readPixels(0, 0, width, height, context3D.RGBA, context3D.UNSIGNED_BYTE, data);
-		
+
+		if (unpremultiply)
+		{
+			var l = data.length;
+			for (var i = 0; i < l; i += 4)
+			{
+				if (data[i+3] > 0)
+				{
+					data[i] = ~~(data[i] / (data[i+3] / 255));
+					data[i+1] = ~~(data[i+1] / (data[i+3] / 255));
+					data[i+2] = ~~(data[i+2] / (data[i+3] / 255));
+				}
+			}					
+		}
+
 		var imageData = context2D.createImageData(width, height);
 		imageData.data.set(data);
 
@@ -63,6 +77,7 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, finalCallba
 
 		cameraToPNG(cubeMapCamera.children[i], cameraNames[i], nextCamera);
 		i++;
+		debugger;
 	}
 	nextCamera();
 }

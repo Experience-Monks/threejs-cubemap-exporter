@@ -14,7 +14,7 @@ new fileIOServer({
 	});
 
 //beefy for quickly testing test client.
-var child = exec('beefy testClient.js --open', {async:true});
+var child = exec('beefy testClient2.js --open', {async:true});
 child.stdout.on('data', function(data) {
 	console.log(chalk.cyan(data));
 });
