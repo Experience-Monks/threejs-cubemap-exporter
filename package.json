@@ -6,7 +6,11 @@
   "scripts": {
     "test": "node test.js"
   },
-  "author": "David Tran <davidt@jam3.com>",
+  "author": {
+    "name": "David Tran",
+    "email": "davidt@jam3.com",
+    "url": "https://github.com/eternallite"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.0.0",
@@ -26,5 +30,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/Jam3/threejs-cubemap-exporter.git"
+  },
+  "homepage": "https://github.com/eternallite/threejs-cubemap-exporter",
+  "bugs": {
+    "url": "https://github.com/eternallite/threejs-cubemap-exporter/issues"
   }
 }
