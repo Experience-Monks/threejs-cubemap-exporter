@@ -15,7 +15,7 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, unpremultip
 	canvas.style.zIndex   = 8;
 	canvas.style.position = 'absolute';
 
-	document.body.appendChild(canvas);
+	//document.body.appendChild(canvas);
 
 	var context2D = canvas.getContext('2d');
 	var context3D = renderer.getContext();
