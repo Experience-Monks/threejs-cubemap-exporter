@@ -77,7 +77,6 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, unpremultip
 
 		cameraToPNG(cubeMapCamera.children[i], cameraNames[i], nextCamera);
 		i++;
-		debugger;
 	}
 	nextCamera();
 }
