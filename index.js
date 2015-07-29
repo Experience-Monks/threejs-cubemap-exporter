@@ -1,4 +1,5 @@
 var PNGIO = require('png-io');
+var clamp = require('clamp');
 
 var cameraNames = ['PX', 'NX', 'PY', 'NY', 'PZ', 'NZ'];
 
@@ -15,7 +16,7 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, unpremultip
 	canvas.style.zIndex   = 8;
 	canvas.style.position = 'absolute';
 
-	//document.body.appendChild(canvas);
+	document.body.appendChild(canvas);
 
 	var context2D = canvas.getContext('2d');
 	var context3D = renderer.getContext();
@@ -36,9 +37,9 @@ function exportCubeMap(renderer, scene, cubeMapCamera, filenameBase, unpremultip
 			{
 				if (data[i+3] > 0)
 				{
-					data[i] = ~~(data[i] / (data[i+3] / 255));
-					data[i+1] = ~~(data[i+1] / (data[i+3] / 255));
-					data[i+2] = ~~(data[i+2] / (data[i+3] / 255));
+					data[i] = clamp(~~(data[i] / (data[i+3] / 255)), 0, 255);
+					data[i+1] = clamp(~~(data[i+1] / (data[i+3] / 255)), 0, 255);
+					data[i+2] = clamp(~~(data[i+2] / (data[i+3] / 255)), 0, 255);
 				}
 			}					
 		}
